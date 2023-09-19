@@ -5,7 +5,7 @@ spec:
   - name: "k8s.AddLabel"
     condition:
       deployedType: k8s.Resources
-      expression: "#input.getIntegerValue('$.data.drink') == 125"
+      expression: "#input.getIntegerValue('$.data.drink') == 123"
     processor:
       - type: freemarker
         description: "Adding label to kubernetes spec"
