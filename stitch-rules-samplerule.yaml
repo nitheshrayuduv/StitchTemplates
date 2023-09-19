@@ -2,22 +2,7 @@ kind: Rules
 metadata:
   namespace: k8s-labels
 spec:
-  - name: "k8s.AddLabel"
+  - name: "k8s.AddLabel123"
     condition:
       deployedType: k8s.Resources
       expression: "#input.getIntegerValue('$.data.drink') == 125"
-    processor:
-      - type: freemarker
-        description: "Adding label to kubernetes spec"
-        phase: POST_FLIGHT
-        weight: 30
-        merge:
-          type: overlay
-        parameters:
-          template: |
-            { "metadata" : {
-               "labels": {
-                 "labelToAdd": "addedLabel"
-               }
-              }
-            }
