@@ -9,3 +9,9 @@ spec:
     processor:
       - type: freemarker
         description: "Adding label to kubernetes spec"
+        phase: POST_FLIGHT
+        weight: 30
+        merge:
+          type: overlay
+        parameters:
+          template: |
